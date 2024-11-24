@@ -1,0 +1,4 @@
+{
+    "env": "dev",
+    "output_path": "/dbfs/tmp/example_output.csv"
+}

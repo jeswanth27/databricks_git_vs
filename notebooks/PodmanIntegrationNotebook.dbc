@@ -1,0 +1,4 @@
+# PodmanIntegrationNotebook.dbc
+
+# Run the Podman setup script in Databricks
+dbutils.notebook.run("scripts/podman_setup.sh", 60)

@@ -1,0 +1,5 @@
+# GitHubIntegrationNotebook.dbc
+
+# You can run the following command inside your Databricks notebook to push files to GitHub
+
+dbutils.notebook.run("scripts/push_to_github.py", 60)

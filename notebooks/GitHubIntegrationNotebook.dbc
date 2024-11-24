@@ -1,5 +1,16 @@
-# GitHubIntegrationNotebook.dbc
+# GitHubIntegrationNotebook.dbc (Databricks Notebook)
 
-# You can run the following command inside your Databricks notebook to push files to GitHub
+import requests
+import json
 
-dbutils.notebook.run("scripts/push_to_github.py", 60)
+# GitHub token and repo information
+GITHUB_API_URL = "https://api.github.com/repos/{owner}/{repo}/commits"
+GITHUB_TOKEN = "your_github_token_here"
+
+# Make API request to GitHub
+response = requests.get(GITHUB_API_URL, headers={"Authorization": f"token {GITHUB_TOKEN}"})
+commits = response.json()
+
+# Show the commits
+for commit in commits:
+    print(f"Commit: {commit['sha']} - {commit['commit']['message']}")

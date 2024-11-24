@@ -1,4 +1,13 @@
-# PodmanIntegrationNotebook.dbc
+# PodmanIntegrationNotebook.dbc (Databricks Notebook)
 
-# Run the Podman setup script in Databricks
-dbutils.notebook.run("scripts/podman_setup.sh", 60)
+import subprocess
+
+def run_podman_container():
+    try:
+        # Run a podman container to execute your ETL job
+        subprocess.run(["podman", "run", "your_podman_image"], check=True)
+        print("Podman container executed successfully!")
+    except subprocess.CalledProcessError as e:
+        print(f"Error running podman container: {e}")
+
+run_podman_container()

@@ -23,6 +23,7 @@
 
 import os
 import json
+import string
 import requests
 
 try:
@@ -44,6 +45,8 @@ try:
     json_parse_exception = json.decoder.JSONDecodeError
 except AttributeError:  # Python 2
     json_parse_exception = ValueError
+
+PIPELINE_ID_PERMITTED_CHARACTERS = set(string.ascii_letters + string.digits + '-_')
 
 
 @click.command(context_settings=CONTEXT_SETTINGS,

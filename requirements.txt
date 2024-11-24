@@ -1,5 +1,8 @@
 # Python dependencies for the project
 
 PyGithub
+databricks-cli==0.17.0
+podman
 requests
-pandas
+pyspark
+docker
